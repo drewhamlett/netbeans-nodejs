@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.drewhamlett.nodejs
+OpenIDE-Module-Layer: com/drewhamlett/nodejs/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/drewhamlett/nodejs/Bundle.properties
+OpenIDE-Module-Specification-Version: 0.1
+
+
+

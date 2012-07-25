@@ -1,0 +1,63 @@
+	/*
+	 * @Override
+	public Node findPath( Node root, Object target ) {
+		Project p = root.getLookup().lookup( Project.class );
+		if ( p == null ) {
+			return null;
+		}
+		// Check each child node in turn.
+		Node[] children = root.getChildren().getNodes( true );
+		for ( Node node : children ) {
+			if ( target instanceof DataObject || target instanceof FileObject ) {
+				FileObject kidFO = node.getLookup().lookup( FileObject.class );
+				if ( kidFO == null ) {
+					continue;
+				}
+				// Copied from org.netbeans.spi.java.project.support.ui.TreeRootNode.PathFinder.findPath:
+				FileObject targetFO = null;
+				if ( target instanceof DataObject ) {
+					targetFO = ( ( DataObject ) target ).getPrimaryFile();
+				} else {
+					targetFO = ( FileObject ) target;
+				}
+				Project owner = FileOwnerQuery.getOwner( targetFO );
+				if ( !p.equals( owner ) ) {
+					return null; // Don't waste time if project does not own the fileobject
+				}
+				if ( kidFO == targetFO ) {
+					return node;
+				} else if ( FileUtil.isParentOf( kidFO, targetFO ) ) {
+					String relPath = FileUtil.getRelativePath( kidFO, targetFO );
+
+					// first path without extension (more common case)
+					String[] path = relPath.split( "/" ); // NOI18N
+					path[path.length - 1] = targetFO.getName();
+
+					// first try to find the file without extension (more common case)
+					Node found = findNode( node, path );
+					if ( found == null ) {
+						// file not found, try to search for the name with the extension
+						path[path.length - 1] = targetFO.getNameExt();
+						found = findNode( node, path );
+					}
+					if ( found == null ) {
+						// can happen for tests that are underneath sources directory
+						continue;
+					}
+					if ( hasObject( found, target ) ) {
+						return found;
+					}
+					Node parent = found.getParentNode();
+					Children kids = parent.getChildren();
+					children = kids.getNodes();
+					for ( Node child : children ) {
+						if ( hasObject( child, target ) ) {
+							return child;
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+	 */

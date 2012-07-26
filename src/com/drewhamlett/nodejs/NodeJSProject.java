@@ -21,7 +21,7 @@ import org.openide.util.Lookup;
 import org.openide.util.Utilities;
 import org.openide.util.lookup.Lookups;
 
-class NodeJSProject implements Project {
+public class NodeJSProject implements Project {
 
 	private final FileObject projectDir;
 	LogicalViewProvider logicalView = new NodeJSProjectLogicalView( this );
